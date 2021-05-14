@@ -102,7 +102,7 @@ export default function () {
   const onClick = useCallback(() => welcome && reset(false), [welcome, reset])
   return (
     <>
-      <Canvas shadowMap sRGB camera={{ position: [0, 5, 12], fov: 50 }} onClick={onClick}>
+      <Canvas shadowMap sRGB camera={{ position: [0, 5, 12], fov: 50 }} tabIndex="0" onKeyPress={onClick}>
         <color attach="background" args={["#171720"]} />
         <ambientLight intensity={0.5} />
         <pointLight position={[-10, -10, -10]} />
@@ -141,7 +141,7 @@ export default function () {
         </Physics>
       </Canvas>
       <div className="startup" style={{ display: welcome ? "block" : "none" }}>
-        * click to start ...
+        * Click and then press enter to start ...
       </div>
     </>
   )
